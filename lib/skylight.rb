@@ -50,6 +50,10 @@ module Skylight
     require 'skylight/railtie'
   end
 
+  if defined?(Sinatra)
+    require 'skylight/sinatra'
+  end
+
   def self.warn_skylight_native_missing
     # TODO: Dumping the error messages this way is pretty hacky
     is_rails = defined?(Rails)
